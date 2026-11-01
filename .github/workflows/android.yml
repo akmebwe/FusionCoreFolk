@@ -23,7 +23,7 @@ jobs:
           java-version: '17'
 
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4.0.4
 
       - name: Install Android platform, NDK and CMake
         run: sdkmanager "platforms;android-37" "build-tools;35.0.0" "cmake;3.22.1" "ndk;27.2.12479018"
