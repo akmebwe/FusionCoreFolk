@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # Fusion Core
 
 [![](https://dcbadge.limes.pink/api/server/MzufgkERdS)](https://discord.gg/MzufgkERdS)
+=======
+# Fusion CoreFolk
+
+[![](https://dcbadge.limes.pink/api/server/MzufgkERdS)]()
+>>>>>>> 7c96512646f376bc30939dde53783d1fbfb2e8d5
 
 Unity modding framework for Android IL2CPP games.
 

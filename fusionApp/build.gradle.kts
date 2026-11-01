@@ -33,8 +33,21 @@ android {
         applicationId = "dev.allofus.fusioncore"
         versionCode = 1
         versionName = "0.0.1"
-        ndk {
-            abiFilters.add("armeabi-v7a")
+    }
+
+    flavorDimensions += "abi"
+    productFlavors {
+        create("arm32") {
+            dimension = "abi"
+            ndk {
+                abiFilters.add("armeabi-v7a")
+            }
+        }
+        create("arm64") {
+            dimension = "abi"
+            ndk {
+                abiFilters.add("arm64-v8a")
+            }
         }
     }
 

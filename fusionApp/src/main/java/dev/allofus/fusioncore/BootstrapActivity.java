@@ -493,9 +493,6 @@ public class BootstrapActivity extends AppCompatActivity {
         setPhaseStatus(getString(R.string.bootstrap_status_extracting_runtime));
         File dotnetDir;
         final boolean is64BitProcess = android.os.Process.is64Bit();
-        if (useIl2Cpp2Mono && !is64BitProcess) {
-            throw new IllegalStateException("il2cpp2mono is not packaged for 32-bit ARM.");
-        }
         final String runtimeArch = is64BitProcess ? "arm64" : "arm32";
         if(!useIl2Cpp2Mono) {
             dotnetDir = new File(getRuntimeDir(appContext), "dotnet");

@@ -77,6 +77,8 @@ static bool preload_dotnet_runtime_libraries()
 {
 #if defined(__arm__) && !defined(__aarch64__)
     const char *required[] = {
+            "libcrypto.so",
+            "libssl.so",
             "libcoreclr.so",
             "libclrjit.so",
             "libSystem.Native.so",
