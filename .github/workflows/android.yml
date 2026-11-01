@@ -26,7 +26,16 @@ jobs:
         uses: android-actions/setup-android@v4.0.4
         with:
           accept-android-sdk-licenses: true
-          packages: 'platforms;android-37 build-tools;35.0.0 cmake;3.22.1 ndk;27.2.12479018'
+          packages: 'platforms;android-37.0 build-tools;35.0.0 cmake;3.22.1 ndk;27.2.12479018'
+
+      - name: Add Android 37 platform compatibility alias
+        shell: bash
+        run: |
+          SDK_ROOT="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-$HOME/.android/sdk}}"
+          test -d "$SDK_ROOT/platforms/android-37.0"
+          if [ ! -d "$SDK_ROOT/platforms/android-37" ]; then
+            ln -sfn android-37.0 "$SDK_ROOT/platforms/android-37"
+          fi
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v5
